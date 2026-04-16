@@ -9,6 +9,10 @@ def create_folders():
         root = os.path.join(os.getcwd(), '..',folder)
         os.makedirs(root, exist_ok=True)
 
+def orchestrate_tasks():
+    for i in range(1,4):
+        print(f"Starting task {i}")
+        time.sleep(3)
 
 def create_files():
     files = ["data/input.txt", "logs/log.txt", "output/result.txt"]
