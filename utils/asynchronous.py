@@ -1,4 +1,5 @@
 import asyncio
+import time
 
 
 async def tool_call(tool_name: str):
@@ -6,8 +7,9 @@ async def tool_call(tool_name: str):
     await asyncio.sleep(2)
     print(f"End of {tool_name} tool call")
 
-def main():
-    asyncio.run(tool_call("Example Tool"))
+async def main():
+    await asyncio.gather(tool_call("Example Tool"), tool_call("Another Tool"), tool_call("Third Tool")
+                         )
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
