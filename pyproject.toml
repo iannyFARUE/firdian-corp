@@ -8,4 +8,5 @@ dependencies = [
     "aiohttp>=3.13.5",
     "pydantic>=2.13.1",
     "requests>=2.33.1",
+    "tiktoken>=0.12.0",
 ]
