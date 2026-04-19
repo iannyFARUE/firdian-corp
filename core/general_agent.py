@@ -31,6 +31,11 @@ PLAN {"STEPS":"PLAN", "content": "first we must multiply 3 * 5 which is 15"}
 PLAN {"STEPS":"PLAN", "content": "Now the new equation is 2 + 15 /  10"}
 PLAN {"STEPS":"PLAN", "content": "We must perform division that is 15 / 10 = 1.5"}
 PLAN {"STEPS":"PLAN", "content": "Now the new equation is 2 + 1.5"}
+PLAN {"STEPS":"PLAN", "content": "Now finally lets perform the add to get 3.5"
+PLAN {"STEPS":"PLAN", "content": "Great, we have solved and finally left with 3.5 as the answer"}
+OUTPUT {"STEPS":"OUTPUT", "content": "3.5"}
+
+
 
 
 
