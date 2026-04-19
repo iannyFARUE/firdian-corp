@@ -1,6 +1,7 @@
 from openai import OpenAI
 from dotenv import load_dotenv
 load_dotenv()
+import json
 
 def prompt_open_ai():
     client = OpenAI()
@@ -48,8 +49,9 @@ A: {{'code': 'def add(a:int, b:int)->int:
         return a + a','isCodingQuestion':true }}
 """
 
-    response = client.responses.create(
-        model="gpt-5.4",
+    response = client.responses.parse(
+        model="gpt-4o",
+        text ={"format":{"type":"json_object"}},
         input=[
             {
                 "role": "system",
@@ -57,11 +59,27 @@ A: {{'code': 'def add(a:int, b:int)->int:
             },
             {
                 "role": "user",
-                "content": "implemement factorial function in python"
+                "content": "Hey, write a code to add n numbers in js"
+            },
+            # Manually keep adding messages to history
+            {
+                "role": "assistant",
+                "content": json.dumps({"step": "START", "content": "User is asking for a code to add n numbers using JavaScript."})
+            },
+                        {
+                "role": "assistant",
+                "content": json.dumps({"step": "PLAN", "content": "We need to write a JavaScript function that can take an array of numbers and return their sum."})
+            },
+                                {
+                "role": "assistant",
+                "content": json.dumps({"step": "PLAN", "content": "We should use JavaScript's built-in array method to iterate over the array and accumulate the sum."})
+            },
+                                            {
+                "role": "assistant",
+                "content": json.dumps({"step": "OUTPUT", "content": "```javascript\nfunction addNumbers(numbers) {\n    return numbers.reduce((total, num) => total + num, 0);\n}\n\n// Example usage:\nconst numbers = [1, 2, 3, 4, 5];\nconsole.log(addNumbers(numbers)); // Output: 15\n```"})
             }
         ]
     )
-    print(response)
     print(response.output_text)
 
 if __name__ == "__main__":
