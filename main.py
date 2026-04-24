@@ -1,5 +1,6 @@
 from transformers import pipeline
-from core.weather_agent import agent
+# from core.weather_agent import agent
+from core.general_agent_v2 import agent
 def main():
    
 
