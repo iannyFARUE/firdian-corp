@@ -14,7 +14,7 @@ async def root():
 
 @app.post("/chat")
 def chat(message: str = Body(..., description="The message")):
-    response = client.chat(model="gemma:2b", messages=[
+    response = client.chat(model="gemma2:2b", messages=[
         {"role":"user","content":message}
     ])
     return {"response":response.message.content}

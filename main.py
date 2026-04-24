@@ -1,5 +1,15 @@
+from transformers import pipeline
+
 def main():
-    print("Hello from firdian-corp!")
+   
+
+    classifier = pipeline("sentiment-analysis")
+    classifier(
+        [
+            "I've been waiting for a HuggingFace course my whole life.",
+            "I hate this so much!",
+        ]
+    )
 
 
 if __name__ == "__main__":
