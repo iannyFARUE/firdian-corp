@@ -35,18 +35,6 @@ PLAN {"STEPS":"PLAN", "content": "Now the new equation is 2 + 1.5"}
 PLAN {"STEPS":"PLAN", "content": "Now finally lets perform the add to get 3.5"
 PLAN {"STEPS":"PLAN", "content": "Great, we have solved and finally left with 3.5 as the answer"}
 OUTPUT {"STEPS":"OUTPUT", "content": "3.5"}
-
-
-
-
-
-
-
-
-
-Q. Hey write a code in python for adding two numbers.
-A: {{'code': 'def add(a:int, b:int)->int:
-        return a + a','isCodingQuestion':true }}
 """
 
     response = client.responses.parse(
