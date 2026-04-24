@@ -6,8 +6,8 @@ def main():
     classifier = pipeline("sentiment-analysis")
     classifier(
         [
-            "I've been waiting for a HuggingFace course my whole life.",
-            "I hate this so much!",
+            "i I AM EXCITED TO BUILD AN AGENT",
+            "I hate MCpS this so much!",
         ]
     )
 
