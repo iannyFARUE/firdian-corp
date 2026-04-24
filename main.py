@@ -1,5 +1,5 @@
 from transformers import pipeline
-
+from core.weather_agent import agent
 def main():
    
 
@@ -13,4 +13,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    agent() 
