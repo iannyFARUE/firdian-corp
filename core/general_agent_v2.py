@@ -5,6 +5,7 @@ from openai import OpenAI
 from dotenv import load_dotenv
 from pydantic import BaseModel, Field
 from tools.weather import get_weather
+from tools.cmd import run_command
 load_dotenv()
 
 client = OpenAI()
@@ -12,7 +13,8 @@ client = OpenAI()
 def agent():
 
     available_tools = {
-        "get_weather":get_weather
+        "get_weather":get_weather,
+        "run_command": run_command
     }
     SYSTEM_PROMPT = """
         You're an expert AI Assistant in resolving user queries using chain of thought
