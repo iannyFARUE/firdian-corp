@@ -35,6 +35,7 @@ def agent():
 
         Available tools:
         - get_weather(city: str): Takes city name as an input string and returns the weather info about the city
+        - run_command(cmd: str): Takes a system linux command as string and executes the command on user's system and returns the output from that command
 
 
         Example 1:
