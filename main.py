@@ -1,6 +1,7 @@
 from transformers import pipeline
 # from core.weather_agent import agent
 from core.general_agent_v2 import agent
+from rag.index import  load_file
 def main():
    
 
@@ -14,4 +15,4 @@ def main():
 
 
 if __name__ == "__main__":
-    agent() 
+    print(load_file())
