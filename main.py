@@ -2,6 +2,7 @@ from transformers import pipeline
 # from core.weather_agent import agent
 from core.general_agent_v2 import agent
 from rag.index import  load_file, chunk_text, embed_and_save
+from rag.chat import chat
 def main():
    
 
@@ -15,5 +16,6 @@ def main():
 
 
 if __name__ == "__main__":
-    chunks = chunk_text(load_file())
-    embed_and_save(url="http://localhost:6333",docs=chunks, collection_name="ian_cv")
+    # chunks = chunk_text(load_file())
+    # embed_and_save(url="http://localhost:6333",docs=chunks, collection_name="ian_cv")
+    chat(collection="ian_cv",url="http://localhost:6333")
