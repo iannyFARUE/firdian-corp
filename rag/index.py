@@ -31,7 +31,7 @@ def embed_and_save(url:str, docs, collection_name:str):
         docs,
         embeddings,
         url=url,
-        prefer_grpc=True,
+        prefer_grpc=False,
         collection_name=collection_name,
     )
     print("Index of documents done...")
