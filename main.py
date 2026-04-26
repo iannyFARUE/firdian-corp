@@ -1,7 +1,7 @@
 from transformers import pipeline
 # from core.weather_agent import agent
 from core.general_agent_v2 import agent
-from rag.index import  load_file
+from rag.index import  load_file, chunk_text
 def main():
    
 
@@ -15,4 +15,4 @@ def main():
 
 
 if __name__ == "__main__":
-    print(load_file())
+    print(chunk_text(load_file()))
