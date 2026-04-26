@@ -1,7 +1,7 @@
 from transformers import pipeline
 # from core.weather_agent import agent
 from core.general_agent_v2 import agent
-from rag.index import  load_file, chunk_text
+from rag.index import  load_file, chunk_text, embed_and_save
 def main():
    
 
@@ -15,4 +15,5 @@ def main():
 
 
 if __name__ == "__main__":
-    print(chunk_text(load_file()))
+    chunks = chunk_text(load_file())
+    embed_and_save(url="http://localhost:6333",docs=chunks, collection_name="ian_cv")
