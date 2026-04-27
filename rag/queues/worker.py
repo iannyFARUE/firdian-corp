@@ -4,7 +4,8 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
 from openai import OpenAI
 
-
+from dotenv import load_dotenv
+load_dotenv()
 embeddings = OpenAIEmbeddings(
         model="text-embedding-3-large",
 )
