@@ -1,15 +1,23 @@
 from typing_extensions import TypedDict, Annotated
 from langgraph.graph.message import add_messages
 from langgraph.graph import StateGraph, END, START
+from langchain.chat_models import init_chat_model
+from dotenv import load_dotenv
+load_dotenv()
 
+
+llm = init_chat_model(
+    model="gpt-4.1-mini",
+    model_provider="openai"
+)
 
 class State(TypedDict):
     messages: Annotated[list, add_messages]
 
 
 def chatbot(state: State):
-    print("\n\nInside chatbot node", state)
-    return {"messages":["Hi, This is a message from ChatBot Node"]}
+    response = llm.invoke(state.get("messages"))
+    return {"messages":[response]}
 
 def samplenode(state: State):
     print("\n\nInside samplenode node",state)
